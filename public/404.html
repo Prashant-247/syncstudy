@@ -6,17 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SyncStudy</title>
     <script>
-      var path = window.location.pathname;
-      var base = '/syncstudy/';
-      var relativePath = path.startsWith(base)
-        ? path.slice(base.length)
-        : '';
-      var query = window.location.search;
-      var hash = window.location.hash;
+      (function () {
+        var base = '/syncstudy';
+        var path = window.location.pathname;
+        var relativePath = path.startsWith(base + '/')
+          ? path.slice(base.length)
+          : '/';
 
-      window.location.replace(
-        base + '?/' + relativePath + query.replace(/^\?/, '&') + hash
-      );
+        var redirect =
+          base +
+          '/?/' +
+          relativePath.replace(/^\//, '') +
+          window.location.search.replace(/^\?/, '&') +
+          window.location.hash;
+
+        window.location.replace(redirect);
+      })();
     </script>
   </head>
   <body></body>
