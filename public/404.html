@@ -5,24 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SyncStudy</title>
-    <script>
-      (function () {
-        var base = '/syncstudy';
-        var path = window.location.pathname;
-        var relativePath = path.startsWith(base + '/')
-          ? path.slice(base.length)
-          : '/';
-
-        var redirect =
-          base +
-          '/?/' +
-          relativePath.replace(/^\//, '') +
-          window.location.search.replace(/^\?/, '&') +
-          window.location.hash;
-
-        window.location.replace(redirect);
-      })();
-    </script>
+    <meta http-equiv="refresh" content="0; url=/syncstudy/" />
   </head>
-  <body></body>
+  <body>
+    <p>Redirecting to <a href="/syncstudy/">SyncStudy</a>...</p>
+  </body>
 </html>

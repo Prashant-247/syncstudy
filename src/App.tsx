@@ -1,5 +1,6 @@
+
 import * as React from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { HashRouter, Routes, Route } from "react-router-dom"
 import { Layout } from "@/components/layout/Layout"
 import { ProtectedRoute } from "@/components/layout/ProtectedRoute"
 import { ToastProvider } from "@/ui/toast"
@@ -25,7 +26,7 @@ export function App() {
 
   return (
     <ToastProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route element={<Layout />}>
             {/* Public Unauthenticated Pages */}
@@ -80,7 +81,7 @@ export function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ToastProvider>
   )
 }
