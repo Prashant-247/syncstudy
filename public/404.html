@@ -1,0 +1,23 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SyncStudy</title>
+    <script>
+      var path = window.location.pathname;
+      var base = '/syncstudy/';
+      var relativePath = path.startsWith(base)
+        ? path.slice(base.length)
+        : '';
+      var query = window.location.search;
+      var hash = window.location.hash;
+
+      window.location.replace(
+        base + '?/' + relativePath + query.replace(/^\?/, '&') + hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
